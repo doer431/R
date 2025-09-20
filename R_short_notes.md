@@ -246,3 +246,163 @@ str <- "Hello"
 ## R Escape Characters
 
 ## Operators
+1. Arithmetic operators
+2. Assignment operators
+3. Comparison operators
+4. Logical operators
+5. Miscellaneous operators
+
+### Arithmetic Operators
+| Operator|	Name| Example	|
+| ------- |------- | -------|
+| +	      | Addition       |	x + y	  |
+| -	      | Subtraction    |	x - y	|
+| *	      | Multiplication |	x * y	|
+| /	      | Division	      |  x / y	|
+| ^	      | Exponen        |  t	x ^ y	|
+| %%      |	Modulus (Remainder from division) |	x %% y	|
+| %/%     |	Integer Division	|x%/%y |
+
+### Assignment Operators
+```R
+my_var <- 3
+
+my_var <<- 3
+
+3 -> my_var
+
+3 ->> my_var
+
+my_var # print my_var
+```
+**Note:** <<- is a global assigner. You will learn more about this in the Global Variable chapter.
+
+It is also possible to turn the direction of the assignment operator.
+
+x <- 3 is equal to 3 -> x
+### The Global Assignment Operator
+Normally, when you create a variable inside a function, that variable is local, and can only be used inside that function.
+
+To create a global variable inside a function, you can use the global assignment operator `<<-`
+```R
+my_function <- function() {
+txt <<- "fantastic"
+  paste("R is", txt)
+}
+
+my_function()
+
+print(txt)
+```
+
+## Comparison Operators
+
+| Operator | Meaning                  | Example  | Output  |
+| -------- | ------------------------ | -------- | ------- |
+| `>`      | Greater than             | `7 > 3`  | `TRUE`  |
+| `<`      | Less than                | `7 < 3`  | `FALSE` |
+| `==`     | Equal to                 | `7 == 7` | `TRUE`  |
+| `!=`     | Not equal to             | `7 != 3` | `TRUE`  |
+| `>=`     | Greater than or equal to | `7 >= 7` | `TRUE`  |
+| `<=`     | Less than or equal to    | `7 <= 3` | `FALSE` |
+
+
+## Logical Operators
+
+| Operator | Description |
+| -------- | ---- |
+|& |	Element-wise Logical AND operator. Returns TRUE if both elements are TRUE |
+|&&	| Logical AND operator - Returns TRUE if both statements are TRUE |
+| ` ` |	Elementwise- Logical OR operator. Returns TRUE if one of the statements is TRUE |
+|` `	| Logical OR operator. Returns TRUE if one of the statements is TRUE |
+|! |	Logical NOT - Returns FALSE if statement is TRUE |
+
+## Miscellaneous Operators
+ 
+Special Operators in R 
+
+| Operator | Name | Example |
+| -------- | ---- | ------- |
+| : | Creates a series of numbers in a sequence	 |x <- 1:10 |
+| %in%	 | Find out if an element belongs to a vector	| x %in% y| 
+|%*%  | Matrix Multiplication	| x <- Matrix1 %*% Matrix2 |
+
+## If Else
+```R
+a <- 200
+b <- 33
+
+if (b > a) {
+  print("b is greater than a")
+} else if (a == b) {
+  print("a and b are equal")
+} else {
+  print("a is greater than b")
+}
+```
+## While Loop
+Break
+```R
+i <- 1
+while (i < 6) {
+  print(i)
+  i <- i + 1
+  if (i == 4) {
+    break
+  }
+}
+```
+next
+```R
+i <- 0
+while (i < 6) {
+  i <- i + 1
+  if (i == 3) {
+    next
+  }
+  print(i)
+}
+```
+## for Loop 
+```R
+# Loop over a sequence 
+for (x in 1:10) {
+  print(x)
+}
+
+#loop over a Vector 
+fruits <- c("apple", "banana", "mango")
+for (f in fruits) {
+  print(paste("I like", f))
+}
+
+# Looping over a List 
+fruits <- list("apple", "banana", "cherry")
+for (x in fruits) {
+  print(x)
+}
+```
+## Functions 
+```R
+my_function <- function(country = "Norway") {
+  paste("I am from", country)
+}
+
+my_function("Sweden")
+my_function("India")
+my_function() # will get the default value, which is Norway
+my_function("USA")
+```
+## Recursion 
+```R
+tri_recursion <- function(k) {
+  if (k > 0) {
+    result <- k + tri_recursion(k - 1)
+    print(result)
+  } else {
+    result = 0
+    return(result)
+  }
+}
+tri_recursion(6)
+```
