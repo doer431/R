@@ -134,3 +134,115 @@ In R, variables do not need to be declared with any particular type, and can eve
 my_var <- 30 # my_var is type of numeric
 my_var <- "Sally" # my_var is now of type character (aka string)
 ```
+| Data Type  |   Example   |  `typeof()` |
+| ----------| --------| ----------|
+|Numeric (double) | x <- 3.14 | "double"|
+| Integer | y <- 7L | "integer"|
+| Complex | z <- 2+3i | "complex" |
+| Logical | f <- false | "false" |
+| Character | s <- "hello" | "character"|
+| Raw | r <- charToRaw("A") | "raw" |   
+
+### But why is there are two different kinds of `Data Types` for Numbers ?
+`Numeric` Data Type contains both any Number with decimals and without decimals . `Integer` are also `Numeric` Data Types without decimals , ` integer` Data Type is used when you are certain that you will never create a variable that should cantains a decimal .
+
+To create an `integer` variable, you must use the letter `L` after the integer value:
+```R
+x <- 1000L
+y <- 55L
+
+# Print values of x and y
+x
+y
+
+# Print the class name of x and y
+class(x)
+class(y)
+```
+## Type Conversion 
+You can convert from one type to another with the following functions:
+
+1. `as.numeric()`
+2. `as.integer()`
+3. `as.complex()`
+``` R
+x <- 1L # integer
+y <- 2 # numeric
+
+# convert from integer to numeric:
+a <- as.numeric(x)
+
+# convert from numeric to integer:
+b <- as.integer(y)
+```
+In general we don't prefer to to convert a complex number in to `numeric` or `integer`. 
+
+## Built-in Math Functions
+R also has many built-in math functions that allows you to perform mathematical tasks on numbers.
+
+| Function                                       | Example in R         | Output                         |
+| ---------------------------------------------- | -------------------- | ------------------------------ |
+| `abs(x)` – absolute value                      | `abs(-7)`            | `7`                            |
+| `sqrt(x)` – square root                        | `sqrt(16)`           | `4`                            |
+| `ceiling(x)` – smallest integer ≥ x            | `ceiling(3.2)`       | `4`                            |
+| `floor(x)` – largest integer ≤ x               | `floor(3.8)`         | `3`                            |
+| `trunc(x)` – truncate decimal part             | `trunc(3.9)`         | `3`                            |
+| `round(x, n)` – round to n decimals            | `round(3.14159, 2)`  | `3.14`                         |
+| `signif(x, n)` – round to n significant digits | `signif(123.456, 4)` | `123.5`                        |
+| `exp(x)` – e^x                                 | `exp(1)`             | `2.718282`                     |
+| `log(x)` – natural log (base e)                | `log(2.718282)`      | `1`                            |
+| `log10(x)` – base 10 log                       | `log10(1000)`        | `3`                            |
+| `log2(x)` – base 2 log                         | `log2(8)`            | `3`                            |
+| `cos(x)` – cosine (radians)                    | `cos(pi/3)`          | `0.5`                          |
+| `sin(x)` – sine (radians)                      | `sin(pi/2)`          | `1`                            |
+| `tan(x)` – tangent (radians)                   | `tan(pi/4)`          | `1`                            |
+| `acos(x)` – inverse cosine                     | `acos(0.5)`          | `1.047198` (= π/3)             |
+| `asin(x)` – inverse sine                       | `asin(1)`            | `1.570796` (= π/2)             |
+| `atan(x)` – inverse tangent                    | `atan(1)`            | `0.785398` (= π/4)             |
+| `max(x1,x2,...)` – maximum value               | `max(3, 7, 2)`       | `7`                            |
+| `min(x1,x2,...)` – minimum value               | `min(3, 7, 2)`       | `2`                            |
+| `sum(x)` – sum of elements                     | `sum(c(1,2,3,4))`    | `10`                           |
+| `prod(x)` – product of elements                | `prod(c(1,2,3,4))`   | `24`                           |
+| `mean(x)` – average                            | `mean(c(2,4,6,8))`   | `5`                            |
+| `median(x)` – median                           | `median(c(1,3,5,7))` | `4`                            |
+| `var(x)` – variance                            | `var(c(1,2,3))`      | `1`                            |
+| `sd(x)` – standard deviation                   | `sd(c(1,2,3))`       | `1`                            |
+| `factorial(x)` – factorial                     | `factorial(5)`       | `120`                          |
+| `choose(n, k)` – n choose k (combinations)     | `choose(5,2)`        | `10`                           |
+| `gamma(x)` – gamma function                    | `gamma(6)`           | `120` (= (6−1)!)               |
+| `digamma(x)` – derivative of log gamma         | `digamma(1)`         | `-0.577216` (Euler’s constant) |
+
+## Strings 
+You can assign a multiline string to a variable like this:
+
+```R
+str <- "Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."
+
+str # print the value of str
+```
+### String Functions
+If you want the line breaks to be inserted at the same position as in the code, use the `cat()` function:
+
+```R
+str <- "Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."
+
+cat(str)
+```
+```R
+str <- "Hello" 
+```
+
+|Function | Example | Uses |
+|---------| --------| -----|
+|`nchar()` | nchar(str) | to find number of characters in a string 
+|` grepl()` |grepl("H", str) | checks if a character or a sequence of characters are present in a string:
+|`paste()` |paste(str1, str2) |to merge/concatenate two strings:|
+## R Escape Characters
+
+## Operators
