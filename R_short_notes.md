@@ -406,3 +406,195 @@ tri_recursion <- function(k) {
 }
 tri_recursion(6)
 ```
+## Data Structures
+1. Vectors
+1. Lists
+1. Matrices
+1. Arrays
+1. Data Frames
+1. Factors 
+
+| Data Structure | Contains |Same Type? | Use Case|
+| -------------- | -------- | --------- | ------- |
+|Vector |	Single row of values	|Yes	|Simple sequences|
+|List |	Multiple types |	No|	Grouped mixed data |
+|Matrix |	2D same-type values	| Yes |	Tables with numeric data |
+|Array|	Multi-dimensional values |	Yes	|3D or higher-dimensional data |
+|Data Frame |	Columns of mixed types|	No	|Working with tabular data |
+
+### Vectors
+A vector is simply a list of items that are of the same type.
+
+To combine the list of items to a vector, use the c() function and separate the items by a comma.
+
+```R
+# Vector of strings
+fruits <- c("banana", "apple", "orange")
+
+# Vector of numerical values
+numbers <- c(1, 2, 3)
+```
+To create a vector with numerical values in a sequence, use the `:` operator:
+```R
+# Vector with numerical values in a sequence
+numbers <- 1:10
+```
+You can also create numerical values with decimals in a sequence, but note that if the last element does not belong to the sequence, it is not used:
+```R
+# Vector with numerical decimals in a sequence
+numbers1 <- 1.5:6.5
+numbers1  # Output [1] 1.5 2.5 3.5 4.5 5.5 6.5
+
+# Vector with numerical decimals in a sequence where the last element is not used
+numbers2 <- 1.5:6.3
+numbers2  # Output [1] 1.5 2.5 3.5 4.5 5.5
+```
+#### Vector Length
+To find out how many items a vector has, use the `length()` function:
+```R
+fruits <- c("banana", "apple", "orange")
+
+length(fruits)
+```
+#### Sort a Vector
+To sort items in a vector alphabetically or numerically, use the `sort()` function:
+
+```R
+fruits <- c("banana", "apple", "orange", "mango", "lemon")
+numbers <- c(13, 3, 5, 7, 20, 2)
+
+sort(fruits)  # Sort a string
+sort(numbers) # Sort numbers
+```
+
+#### Access Vectors
+You can access the vector items by referring to its index number inside brackets `[]`. The first item has index 1, the second item has index 2, and so on:
+
+```R
+fruits <- c("banana", "apple", "orange")
+
+# Access the first item (banana)
+fruits[1]
+```
+You can also access multiple elements by referring to different index positions with the` c()` function:
+
+```R
+fruits <- c("banana", "apple", "orange", "mango", "lemon")
+
+# Access the first and third item (banana and orange)
+fruits[c(1, 3)]
+```
+You can also use negative index numbers to access all items except the ones specified:
+
+```R
+fruits <- c("banana", "apple", "orange", "mango", "lemon")
+
+# Access all items except for the first item
+fruits[c(-1)]
+```
+
+#### Repeat Vectors
+
+To repeat vectors, use the `rep()` function:
+
+Repeat each value:
+```R
+repeat_each <- rep(c(1,2,3), each = 3)
+
+repeat_each # Output [1] 1 1 1 2 2 2 3 3 3
+```
+
+Repeat the sequence of the vector:
+```R
+repeat_times <- rep(c(1,2,3), times = 3)
+
+repeat_times # output [1] 1 2 3 1 2 3 1 2 3
+```
+
+Repeat each value independently:
+```R
+repeat_indepent <- rep(c(1,2,3), times = c(5,2,1))
+
+repeat_indepent # Output [1] 1 1 1 1 1 2 2 3
+```
+
+To make bigger or smaller steps in a sequence, use the `seq() `function:
+```R
+numbers <- seq(from = 0, to = 100, by = 20)
+
+numbers # Output [1]   0  20  40  60  80 100
+```
+
+### Lists
+
+A list in R can contain many different data types inside it. A list is a collection of data which is ordered and changeable.
+
+To create a list, use the` list()` function:
+```R
+# List of strings
+thislist <- list("apple", "banana", "cherry")
+
+# Print the list
+thislist
+```
+#### Access Lists
+You can access the list items by referring to its index number, inside brackets. The first item has index 1, the second item has index 2, and so on:
+
+```R
+thislist <- list("apple", "banana", "cherry")
+
+thislist[1]
+```
+`Note` : In R , The first Item starts from Index `1` . Unlike `Python ` or any other language Index doesn't starts from `0`
+
+#### List Length
+To find out how many items a list has, use the `length() `function:
+
+```R
+thislist <- list("apple", "banana", "cherry")
+
+length(thislist)
+```
+#### Check if Item Exists
+To find out if a specified item is present in a list, use the `%in%` operator:
+
+```R
+thislist <- list("apple", "banana", "cherry")
+
+"apple" %in% thislist
+```
+
+#### Add List Items
+To add an item to the end of the list, use the append() function:
+
+```R
+thislist <- list("apple", "banana", "cherry")
+
+append(thislist, "orange")
+```
+
+To add an item to the right of a specified index, add "after=index number" in the append() function:
+
+```R
+thislist <- list("apple", "banana", "cherry")
+
+append(thislist, "orange", after = 2)
+```
+
+You can specify a range of indexes by specifying where to start and where to end the range, by using the : operator:
+
+```R
+thislist <- list("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+
+(thislist)[2:5]
+```
+There are several ways to join, or concatenate, two or more lists in R.
+
+The most common way is to use the `c()` function, which combines two elements together:
+```R
+list1 <- list("a", "b", "c")
+list2 <- list(1,2,3)
+list3 <- c(list1,list2)
+
+list3
+```
