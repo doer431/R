@@ -422,7 +422,7 @@ tri_recursion(6)
 |Array|	Multi-dimensional values |	Yes	|3D or higher-dimensional data |
 |Data Frame |	Columns of mixed types|	No	|Working with tabular data |
 
-### Vectors
+## Vectors
 A vector is simply a list of items that are of the same type.
 
 To combine the list of items to a vector, use the c() function and separate the items by a comma.
@@ -449,14 +449,14 @@ numbers1  # Output [1] 1.5 2.5 3.5 4.5 5.5 6.5
 numbers2 <- 1.5:6.3
 numbers2  # Output [1] 1.5 2.5 3.5 4.5 5.5
 ```
-#### Vector Length
+### Vector Length
 To find out how many items a vector has, use the `length()` function:
 ```R
 fruits <- c("banana", "apple", "orange")
 
 length(fruits)
 ```
-#### Sort a Vector
+### Sort a Vector
 To sort items in a vector alphabetically or numerically, use the `sort()` function:
 
 ```R
@@ -467,7 +467,7 @@ sort(fruits)  # Sort a string
 sort(numbers) # Sort numbers
 ```
 
-#### Access Vectors
+### Access Vectors
 You can access the vector items by referring to its index number inside brackets `[]`. The first item has index 1, the second item has index 2, and so on:
 
 ```R
@@ -493,7 +493,7 @@ fruits <- c("banana", "apple", "orange", "mango", "lemon")
 fruits[c(-1)]
 ```
 
-#### Repeat Vectors
+### Repeat Vectors
 
 To repeat vectors, use the `rep()` function:
 
@@ -525,7 +525,7 @@ numbers <- seq(from = 0, to = 100, by = 20)
 numbers # Output [1]   0  20  40  60  80 100
 ```
 
-### Lists
+## Lists
 
 A list in R can contain many different data types inside it. A list is a collection of data which is ordered and changeable.
 
@@ -537,7 +537,7 @@ thislist <- list("apple", "banana", "cherry")
 # Print the list
 thislist
 ```
-#### Access Lists
+### Access Lists
 You can access the list items by referring to its index number, inside brackets. The first item has index 1, the second item has index 2, and so on:
 
 ```R
@@ -547,7 +547,7 @@ thislist[1]
 ```
 `Note` : In R , The first Item starts from Index `1` . Unlike `Python ` or any other language Index doesn't starts from `0`
 
-#### List Length
+### List Length
 To find out how many items a list has, use the `length() `function:
 
 ```R
@@ -555,7 +555,7 @@ thislist <- list("apple", "banana", "cherry")
 
 length(thislist)
 ```
-#### Check if Item Exists
+### Check if Item Exists
 To find out if a specified item is present in a list, use the `%in%` operator:
 
 ```R
