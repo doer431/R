@@ -707,7 +707,7 @@ for (rows in 1:nrow(thismatrix)) {
 }
 ```
 
-### Converting two matrices 
+### Combine two matrices 
 Again, you can use the` rbind() `or` cbind() `function to combine two or more matrices together:
 ``` R
 # Combine matrices
@@ -722,5 +722,61 @@ Matrix_Combined
 Matrix_Combined <- cbind(Matrix1, Matrix2)
 Matrix_Combined
 ```
+
+## Data Frames
+
+Data Frames are data displayed in a format as a table.
+
+Data Frames can have different types of data inside it. While the first column can be `character`, the second and third can be `numeric `or` logical`. However, each column should have the same type of data.
+
+Use the `data.frame()` function to create a data frame:
+```R
+# Create a data frame
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Print the data frame
+Data_Frame
+```
+
+### Access Items
+We can use single brackets`[ ]`, double brackets`[[ ]]`or   `$`to access columns from a data frame:
+
+```R
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+Data_Frame[1]
+
+Data_Frame[["Training"]]
+
+Data_Frame$Training
+```
+### Functions can be perfomed on Data Frames
+This is the common Data Frame example 
+```R
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+```
+
+| name | Function | Example |
+| ---- | -------- | ------- |
+|Add Rows | `rbind()`| New_row_DF <- rbind(Data_Frame, c("Strength", 110, 110)) |
+| Add Columns | `cbind()`| New_col_DF <- cbind(Data_Frame, Steps = c(1000, 6000, 2000))|
+|Remove Rows and Columns |`c()` | Data_Frame_New <- Data_Frame[-c(1), -c(1)] |
+| Amount of Rows and Columns | `dim()` | dim(Data_Frame) |
+|number of columns  | `ncol()` | ncol(Data_Frame)|
+| number of rows | `nrows()` | nrow(Data_Frame)|
+|Data Frame length | `length()`| length(Data_Frame)|
+|combine two or more data frames in R vertically |`rbind()`| New_Data_Frame <- rbind(Data_Frame1, Data_Frame2) |
+| combine two or more data frames in R horizontally |`cbind()` | New_Data_Frame1 <- cbind(Data_Frame3, Data_Frame4) |
 
 
