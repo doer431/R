@@ -723,6 +723,84 @@ Matrix_Combined <- cbind(Matrix1, Matrix2)
 Matrix_Combined
 ```
 
+## Arrays
+
+Compared to matrices, arrays can have more than two dimensions.
+
+We can use the `array()` function to create an array, and the` dim `parameter to specify the dimensions:
+```R
+# An array with one dimension with values ranging from 1 to 24
+thisarray <- c(1:24)
+thisarray
+
+# An array with more than one dimension
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+multiarray
+# output
+#, , 1
+
+#      [,1] [,2] [,3]
+# [1,]    1    5    9
+# [2,]    2    6   10
+# [3,]    3    7   11
+# [4,]    4    8   12
+
+# , , 2
+
+#      [,1] [,2] [,3]
+# [1,]   13   17   21
+# [2,]   14   18   22
+# [3,]   15   19   23
+# [4,]   16   20   24
+```
+#### Example Explained
+In the example above we create an array with the values 1 to 24.
+
+How does `dim=c(4,3,2)` work?
+The first and second number in the bracket specifies the amount of rows and columns.
+The last number in the bracket specifies how many dimensions we want.
+
+`Note`: Arrays can only have one data type.
+
+### Access Array Items
+You can access the array elements by referring to the index position. You can use the` []` brackets to access the desired elements from an array:
+
+```R
+multiarray[2, 3, 2]
+```
+You can also access the whole row or column from a matrix in an array, by using the `c()`function:
+```R
+# Access all the items from the first row from matrix one
+multiarray[c(1),,1]
+
+# Access all the items from the first column from matrix one
+multiarray[,c(1),1]
+```
+### Check if an Item Exists
+
+```R
+2 %in% multiarray
+```
+### Functions on Arrays 
+| Use case | function | example |
+| -------- | -------- | ------- |
+| Amount of Rows and Columns | `dim() `| dim(multiarray)|
+| Array Length | `length()`| length(multiarray)|
+
+
+### Loop Through an Array
+You can loop through the array items by using a` for` loop:
+```R
+thisarray <- c(1:24)
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+
+for(x in multiarray){
+  print(x)
+}
+```
+
+
+
 ## Data Frames
 
 Data Frames are data displayed in a format as a table.
@@ -767,7 +845,7 @@ Data_Frame <- data.frame (
 )
 ```
 
-| name | Function | Example |
+| Use case | Function | Example |
 | ---- | -------- | ------- |
 |Add Rows | `rbind()`| New_row_DF <- rbind(Data_Frame, c("Strength", 110, 110)) |
 | Add Columns | `cbind()`| New_col_DF <- cbind(Data_Frame, Steps = c(1000, 6000, 2000))|
